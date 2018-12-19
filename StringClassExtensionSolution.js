@@ -22,6 +22,10 @@ String.prototype.toLower = function () {
     }
     return string.join('')
 }
+String.prototype.ucFirst = function () {
+    let string = Object.values(this).join('')
+    return string[0].toUpper() + string.slice(1);
+}
 
 
 
