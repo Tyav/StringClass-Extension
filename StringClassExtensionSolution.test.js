@@ -57,6 +57,9 @@ describe('Test for isQuestion', () => {
     test('A simple case of a regular Question', () => {
         expect('Are you a boy?'.isQuestion()).toBe(true);
     });
+    test('A simple case of a regular Question with a space at the end', () => {
+        expect('Are you a boy? '.isQuestion()).toBe(true);
+    });
     test('A case where there is no ?', () => {
         expect('I am ready'.isQuestion()).toBeFalsy();
     });
@@ -65,5 +68,23 @@ describe('Test for isQuestion', () => {
     });
     test('A case where the ? is within the statement', () => {
         expect('i am the ? regular'.isQuestion()).toBe(false)
+    });
+});
+
+describe('Test for words', () => {
+    test('A simple case of a regular Question', () => {
+        expect('all of the time'.words()).toBe(['all', 'of', 'the', 'time']);
+    });
+    test('A simple case of a regular Question with a space at the end', () => {
+        expect("people don't love what i see".words()).toBe(['people', "don't", 'love', 'what', 'i', 'see']);
+    });
+    test('A case where there is no ?', () => {
+        expect('jessy-way on the highway'.words()).toBe(['jessy-way', 'on', 'the', 'highway']);
+    });
+    test('A case where there is a none alpha character', () => {
+        expect("7up is better than 33".words()).toBe(['7up', 'is', 'better', 'than', '33']);
+    });
+    test('A case where the ? is within the statement', () => {
+        expect('i have it'.words()).toBe(['i', 'have', 'it'])
     });
 });
