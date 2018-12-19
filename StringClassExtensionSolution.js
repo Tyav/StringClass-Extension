@@ -15,4 +15,6 @@ String.prototype.toUpper = function () {
 }
 
 
+
+
 module.exports = String;
