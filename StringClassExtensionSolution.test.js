@@ -72,19 +72,19 @@ describe('Test for isQuestion', () => {
 });
 
 describe('Test for words', () => {
-    test('A simple case of a regular Question', () => {
-        expect('all of the time'.words()).toBe(['all', 'of', 'the', 'time']);
+    test('A simple case of words', () => {
+        expect('all of the time'.words()).toEqual(['all', 'of', 'the', 'time']);
     });
-    test('A simple case of a regular Question with a space at the end', () => {
-        expect("people don't love what i see".words()).toBe(['people', "don't", 'love', 'what', 'i', 'see']);
+    test("A case where ' is included", () => {
+        expect("people don't love what i see".words()).toEqual(['people', "don't", 'love', 'what', 'i', 'see']);
     });
-    test('A case where there is no ?', () => {
-        expect('jessy-way on the highway'.words()).toBe(['jessy-way', 'on', 'the', 'highway']);
+    test('A case where - is included', () => {
+        expect('jessy-way on the highway'.words()).toEqual(['jessy-way', 'on', 'the', 'highway']);
     });
-    test('A case where there is a none alpha character', () => {
-        expect("7up is better than 33".words()).toBe(['7up', 'is', 'better', 'than', '33']);
+    test('A case where numbers are included', () => {
+        expect("7up is better than 33".words()).toEqual(['7up', 'is', 'better', 'than', '33']);
     });
-    test('A case where the ? is within the statement', () => {
-        expect('i have it'.words()).toBe(['i', 'have', 'it'])
+    test('A case where . is included', () => {
+        expect('i have it.'.words()).not.toEqual(['i', 'have', 'it'])
     });
 });

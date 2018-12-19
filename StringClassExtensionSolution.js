@@ -30,6 +30,10 @@ String.prototype.isQuestion = function (){
     let string = Object.values(this).join('')
     return /^.+\?\s*$/.test(string)
 }
+String.prototype.words = function (){
+    let string = Object.values(this).join('')
+    return string.match(/\w+[^\s\t]*\w*/g)
+}
 
 
 
