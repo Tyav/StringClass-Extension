@@ -53,3 +53,17 @@ describe('Test for ucFirst', () => {
         expect('5N734'.ucFirst()).toBe('5N734')
     });
 });
+describe('Test for isQuestion', () => {
+    test('A simple case of a regular Question', () => {
+        expect('Are you a boy?'.isQuestion()).toBe(true);
+    });
+    test('A case where there is no ?', () => {
+        expect('I am ready'.isQuestion()).toBeFalsy();
+    });
+    test('A case where there is a none alpha character', () => {
+        expect("I'm the owner, am I not?".isQuestion()).toBe(true);
+    });
+    test('A case where the ? is within the statement', () => {
+        expect('i am the ? regular'.isQuestion()).toBe(false)
+    });
+});
