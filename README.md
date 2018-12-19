@@ -1,0 +1,1 @@
+# StringClass - Extension
