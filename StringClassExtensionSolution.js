@@ -1,13 +1,8 @@
-String.prototype.home = function (){
-    return 'yas'
+String.prototype.hasVowels = function (){
+    let string = Object.values(this).join('')
+    let vowelSearch = /[aeiouAEIOU]/;
+    return vowelSearch.test(string)
 }
 
-String.prototype.exit = function (){
-    return 'exiting'
-}
-
-String.prototype.namer = function (){
-    return Object.values(this).join('')
-}
 
 module.exports = String;
