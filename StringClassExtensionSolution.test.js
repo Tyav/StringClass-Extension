@@ -36,3 +36,20 @@ describe('Test for toLower', () => {
         expect('45 REhe-re7'.toLower()).toMatch(/^45\srehe-re7$/)
     })
 });
+describe('Test for ucFirst', () => {
+    test('A simple case where all the characters are Upper', () => {
+        expect('RASHEED'.ucFirst()).toBe('RASHEED');
+    });
+    test('A case where the first character is upper', () => {
+        expect('Tunde'.ucFirst()).toBe('Tunde');
+    });
+    test('A case where some of the characters are upper but first is lower', () => {
+        expect('mowSer'.ucFirst()).toBe('MowSer');
+    });
+    test('A case where first character is none alpha', () => {
+        expect('5hew'.ucFirst()).toMatch(/^5hew$/)
+    });
+    test('A case where there are none alpha characters in the string', () => {
+        expect('5N734'.ucFirst()).toBe('5N734')
+    });
+});
