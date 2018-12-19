@@ -1,0 +1,23 @@
+{
+  "name": "stringclass-extension",
+  "version": "1.0.0",
+  "description": "Extension for the JS String class",
+  "main": "StringClassExtensionSolution.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tyav/StringClass-Extension.git"
+  },
+  "author": "Moses Tyav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tyav/StringClass-Extension/issues"
+  },
+  "homepage": "https://github.com/Tyav/StringClass-Extension#readme",
+  "devDependencies": {
+    "jasmine": "^3.3.1",
+    "jest": "^23.6.0"
+  }
+}
