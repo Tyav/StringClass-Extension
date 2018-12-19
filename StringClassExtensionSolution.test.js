@@ -93,8 +93,8 @@ describe('Test for wordCount', () => {
     test('A simple case of words with only alphabeths', () => {
         expect('all of the time'.wordCount()).toEqual(4);
     });
-    test("A case where ' is included", () => {
-        expect("people don't love what i see".wordCount()).toEqual(6);
+    test("A case where @ is included", () => {
+        expect("people don@t love what i see".wordCount()).toEqual(6);
     });
     test('A case where - is included', () => {
         expect('jessy-way on the highway'.wordCount()).not.toEqual(8);
@@ -103,6 +103,6 @@ describe('Test for wordCount', () => {
         expect("7up is better than 33".wordCount()).toEqual(5);
     });
     test('A case where . is included', () => {
-        expect('i have it.'.wordCount()).not.toEqual(3)
+        expect('i have NO.'.wordCount()).toEqual(3)
     });
 });

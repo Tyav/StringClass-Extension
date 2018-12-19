@@ -34,6 +34,10 @@ String.prototype.words = function (){
     let string = Object.values(this).join('')
     return string.match(/\w+[^\s\t]*\w*/g)
 }
+String.prototype.wordCount = function (){
+    let string = Object.values(this).join('')
+    return string.words().length
+}
 
 
 
