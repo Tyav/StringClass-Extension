@@ -106,3 +106,17 @@ describe('Test for wordCount', () => {
         expect('i have NO.'.wordCount()).toEqual(3)
     });
 });
+describe('Test for toCurrency', () => {
+    test('A simple case of non decimals', () => {
+        expect('7123456'.toCurrency()).toBe('7,123,456');
+    });
+    test("A case where a decimal is involve", () => {
+        expect("1234543.11".toCurrency()).toBe('1,234,543.11');
+    });
+    test('A case where not a number', () => {
+        expect('jessy-way'.toCurrency()).toBeNaN();
+    });
+    test('A case where numbers are included', () => {
+        expect(" ".toCurrency()).toBeNaN();
+    });
+});
