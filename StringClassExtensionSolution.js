@@ -59,6 +59,18 @@ String.prototype.fromCurrency = function (){
         return Number(string.replace(/,/g, ''))
     }
 }
+String.prototype.inverseCase = function (){
+    var invert = [];
+    for (var i = 0; i < this.length; i++){
+        if (/[a-z]+$/u.test(this[i])){
+            invert.push(this[i].toUpper())
+        } else {
+            invert.push(this[i].toLower())
+        }
+    }
+    return invert.join('');
+}
+
 
 
 module.exports = String;

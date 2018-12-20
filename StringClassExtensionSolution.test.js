@@ -138,19 +138,36 @@ describe('Test for fromCurrency', () => {
     });
 });
 describe('Test for inverseCase', () => {
-    test('A simple case of numbers without decimals or number divider', () => {
+    test('A simple case of first letter captions', () => {
         expect('Mr. Ben'.inverseCase()).toBe('mR. bEN');
     });
-    test("A case where only decimal exist", () => {
+    test("A case where first letter is lower case", () => {
         expect('naComPLise'.inverseCase()).toBe('NAcOMplISE');
     });
-    test('A case with only dividers', () => {
+    test('A case with only one word and only first is upper', () => {
         expect('Decagon'.inverseCase()).toBe('dECAGON');
     });
-    test('A case with both divider and decimal', () => {
+    test('A case with - in the string', () => {
         expect('--HappyName'.inverseCase()).toBe('--hAPPYnAME');
     });
-    test('A case with a non-digit character', () => {
+    test('A case with digit character', () => {
         expect('123456r'.inverseCase()).toBe('123456R');
+    });
+});
+describe('Test for alternatingCase', () => {
+    test('A simple case of first letter captions', () => {
+        expect('Onomatopoeia'.alternatingCase()).toBe('oNoMaToPoEiA');
+    });
+    test("A case where first letter is lower case", () => {
+        expect('naComPLise'.alternatingCase()).toBe('nAcOmPlIsE');
+    });
+    test('A case with only one word and only first is upper', () => {
+        expect('Decagon'.alternatingCase()).toBe('dEcAgOn');
+    });
+    test('A case with -  starting the string', () => {
+        expect('--HappyName'.alternatingCase()).toBe('--hApPyNaMe');
+    });
+    test('A case with digit character', () => {
+        expect('123456r'.alternatingCase()).toBe('123456r');
     });
 });
