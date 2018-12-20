@@ -51,7 +51,14 @@ String.prototype.toCurrency = function () {
         return final.slice(0, final.length-1)
     }
 }
-
+String.prototype.fromCurrency = function (){
+    let string = Object.values(this).join('');
+    if(/[^\d\.,]/.test(string)){
+        return NaN;
+    }else {
+        return Number(string.replace(/,/g, ''))
+    }
+}
 
 
 module.exports = String;
