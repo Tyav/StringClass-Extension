@@ -120,3 +120,20 @@ describe('Test for toCurrency', () => {
         expect(" ".toCurrency()).toBeNaN();
     });
 });
+describe('Test for fromCurrency', () => {
+    test('A simple case of numbers without decimals or number divider', () => {
+        expect('4321'.fromCurrency()).toEqual(4321);
+    });
+    test("A case where only decimal exist", () => {
+        expect("56.4".fromCurrency()).toEqual(56.4);
+    });
+    test('A case with only dividers', () => {
+        expect('3,456'.fromCurrency()).toEqual(3456);
+    });
+    test('A case with both divider and decimal', () => {
+        expect("11,111.11".fromCurrency()).toEqual(11111.11);
+    });
+    test('A case with a non-digit character', () => {
+        expect('f34.3'.fromCurrency()).toEqual()
+    });
+});
