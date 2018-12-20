@@ -8,35 +8,35 @@ String.prototype.toUpper = function () {
     let string = Object.values(this);
     for (var i = 0; i < string.length; i++){
         if (/[a-z]+$/u.test(string[i])){
-            string[i] = String.fromCharCode(string[i].charCodeAt(0)-32)
+            string[i] = String.fromCharCode(string[i].charCodeAt(0)-32);
         }
     }
-    return string.join('')
+    return string.join('');
 }
 String.prototype.toLower = function () {
     let string = Object.values(this);
     for (var i = 0; i < string.length; i++){
         if (/[A-Z]+$/u.test(string[i])){
-            string[i] = String.fromCharCode(string[i].charCodeAt(0) + 32)
+            string[i] = String.fromCharCode(string[i].charCodeAt(0) + 32);
         }
     }
-    return string.join('')
+    return string.join('');
 }
 String.prototype.ucFirst = function () {
-    let string = Object.values(this).join('')
+    let string = Object.values(this).join('');
     return string[0].toUpper() + string.slice(1);
 }
 String.prototype.isQuestion = function (){
-    let string = Object.values(this).join('')
-    return /^.+\?\s*$/.test(string)
+    let string = Object.values(this).join('');
+    return /^.+\?\s*$/.test(string);
 }
 String.prototype.words = function (){
-    let string = Object.values(this).join('')
-    return string.match(/\w+[^\s\t]*\w*/g)
+    let string = Object.values(this).join('');
+    return string.match(/\w+[^\s\t]*\w*/g);
 }
 String.prototype.wordCount = function (){
-    let string = Object.values(this).join('')
-    return string.words().length
+    let string = Object.values(this).join('');
+    return string.words().length;
 }
 String.prototype.toCurrency = function () {
     let string = Object.values(this).join('');
@@ -44,11 +44,11 @@ String.prototype.toCurrency = function () {
     if(/[^\d\.]/.test(string)){
         return NaN;
     }else if (/\./.test(string)){
-        return string.replace(expres, '$1,')
+        return string.replace(expres, '$1,');
     } else {
         let final = string + '.';
-        final = final.replace(expres, '$1,')
-        return final.slice(0, final.length-1)
+        final = final.replace(expres, '$1,');
+        return final.slice(0, final.length-1);
     }
 }
 String.prototype.fromCurrency = function (){
@@ -56,16 +56,16 @@ String.prototype.fromCurrency = function (){
     if(/[^\d\.,]/.test(string)){
         return NaN;
     }else {
-        return Number(string.replace(/,/g, ''))
+        return Number(string.replace(/,/g, ''));
     }
 }
 String.prototype.inverseCase = function (){
     var invert = [];
     for (var i = 0; i < this.length; i++){
         if (/[a-z]+$/u.test(this[i])){
-            invert.push(this[i].toUpper())
+            invert.push(this[i].toUpper());
         } else {
-            invert.push(this[i].toLower())
+            invert.push(this[i].toLower());
         }
     }
     return invert.join('');
@@ -89,10 +89,10 @@ String.prototype.numberWords = function (){
             numWord.push(wordObjects[(this[i])]);
         }
     }
-    return numWord.join(' ')
+    return numWord.join(' ');
 }
 String.prototype.isDigit = function (){
-    return /^(-{1})?\d$/.test(this)
+    return /^(-{1})?\d$/.test(this);
 }
 String.prototype.selectNumbers = function (){
     return this.match(/\d/g).join('');
