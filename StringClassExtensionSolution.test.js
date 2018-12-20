@@ -134,6 +134,6 @@ describe('Test for fromCurrency', () => {
         expect("11,111.11".fromCurrency()).toEqual(11111.11);
     });
     test('A case with a non-digit character', () => {
-        expect('f34.3'.fromCurrency()).toEqual()
+        expect('f34.3'.fromCurrency()).toBeNaN()
     });
 });
