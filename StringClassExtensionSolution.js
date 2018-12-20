@@ -94,7 +94,9 @@ String.prototype.numberWords = function (){
 String.prototype.isDigit = function (){
     return /^(-{1})?\d$/.test(this)
 }
-String.prototype.selectNumbers = 
+String.prototype.selectNumbers = function (){
+    return this.match(/\d/g).join('');
+}
 
 
 
