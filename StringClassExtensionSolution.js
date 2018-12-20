@@ -78,6 +78,21 @@ String.prototype.alternatingCase = function (){
     }
     return alter.join('');
 }
+String.prototype.numberWords = function (){
+    let wordObjects = {'0':'zero','1':'one','2':'two','3':'three',
+    '4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine','.':'point'};
+    let numWord = [];
+    if (/[^\d\.]/.test(this)){
+        return NaN;
+    } else {
+        for (let i = 0; i < this.length; i++){
+            numWord.push(wordObjects[(this[i])]);
+        }
+    }
+    return numWord.join(' ')
+}
+
+
 
 
 
