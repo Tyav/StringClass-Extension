@@ -188,3 +188,20 @@ describe('Test for numberWords', () => {
         expect('123456'.numberWords()).toBe('one two three four five six');
     });
 });
+describe('Test for isDigit', () => {
+    test('A simple case of numbers', () => {
+        expect('325'.isDigit()).toBeFalsy();
+    });
+    test("A case where alphabeth is involved in the number", () => {
+        expect('3'.isDigit()).toBeTruthy();
+    });
+    test('A case where the number has decimal', () => {
+        expect('a'.isDigit()).toBe(false);
+    });
+    test('A case where alphabeth is included in the number', () => {
+        expect('-1'.isDigit()).not.toBeFalsy();
+    });
+    test('A case with digit character', () => {
+        expect('123456'.isDigit()).toBe(false);
+    });
+});
