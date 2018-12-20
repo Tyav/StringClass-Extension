@@ -171,3 +171,20 @@ describe('Test for alternatingCase', () => {
         expect('123456r'.alternatingCase()).toBe('123456r');
     });
 });
+describe('Test for numberWords', () => {
+    test('A simple case of numbers', () => {
+        expect('325'.numberWords()).toBe('three two five');
+    });
+    test("A case where alphabeth is involved in the number", () => {
+        expect('34three'.numberWords()).toBeNaN();
+    });
+    test('A case where the number has decimal', () => {
+        expect('654.676'.numberWords()).toBe('six five four point six seven six');
+    });
+    test('A case where alphabeth is included in the number', () => {
+        expect('54e4'.numberWords()).toBeNaN();
+    });
+    test('A case with digit character', () => {
+        expect('123456'.numberWords()).toBe('one two three four five six');
+    });
+});
