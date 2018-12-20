@@ -92,8 +92,9 @@ String.prototype.numberWords = function (){
     return numWord.join(' ')
 }
 String.prototype.isDigit = function (){
-    return /^\d$/.test
+    return /^(-{1})?\d$/.test(this)
 }
+String.prototype.selectNumbers = 
 
 
 

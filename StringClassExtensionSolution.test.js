@@ -189,19 +189,27 @@ describe('Test for numberWords', () => {
     });
 });
 describe('Test for isDigit', () => {
-    test('A simple case of numbers', () => {
+    test('A simple case of numbers more than one digit', () => {
         expect('325'.isDigit()).toBeFalsy();
     });
-    test("A case where alphabeth is involved in the number", () => {
+    test("A simple case where digit is one", () => {
         expect('3'.isDigit()).toBeTruthy();
     });
     test('A case where the number has decimal', () => {
-        expect('a'.isDigit()).toBe(false);
+        expect('1.0'.isDigit()).toBe(false);
     });
     test('A case where alphabeth is included in the number', () => {
         expect('-1'.isDigit()).not.toBeFalsy();
     });
     test('A case with digit character', () => {
-        expect('123456'.isDigit()).toBe(false);
+        expect('--3'.isDigit()).toBe(false);
+    });
+});
+describe('Test for selectNumbers', () => {
+    test('A simple case of numbers only', () => {
+        expect('325432'.selectNumbers()).toEqual('325432');
+    });
+    test("A simple case where digit is one among alphabeths", () => {
+        expect('tyes3gfse'.selectNumbers()).toEqual('3');
     });
 });
