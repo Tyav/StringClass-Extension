@@ -137,3 +137,20 @@ describe('Test for fromCurrency', () => {
         expect('f34.3'.fromCurrency()).toBeNaN()
     });
 });
+describe('Test for inverseCase', () => {
+    test('A simple case of numbers without decimals or number divider', () => {
+        expect('Mr. Ben'.inverseCase()).toBe('mR. bEN');
+    });
+    test("A case where only decimal exist", () => {
+        expect('naComPLise'.inverseCase()).toBe('NAcOMplISE');
+    });
+    test('A case with only dividers', () => {
+        expect('Decagon'.inverseCase()).toBe('dECAGON');
+    });
+    test('A case with both divider and decimal', () => {
+        expect('--HappyName'.inverseCase()).toBe('--hAPPYnAME');
+    });
+    test('A case with a non-digit character', () => {
+        expect('123456r'.inverseCase()).toBe('123456R');
+    });
+});
