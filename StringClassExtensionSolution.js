@@ -70,6 +70,14 @@ String.prototype.inverseCase = function (){
     }
     return invert.join('');
 }
+String.prototype.alternatingCase = function (){
+    var alter = [];
+    for (var i = 0; i < this.length; i++){
+        if (i % 2 == 0){alter.push(this[i].toLowerCase());}
+        else{alter.push(this[i].toUpperCase());}
+    }
+    return alter.join('');
+}
 
 
 
